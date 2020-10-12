@@ -22,7 +22,12 @@
 
 ### 构建镜像
 ```Bash
-docker build . -t rime_table_decompiler
+docker build . -t rime-table-decompiler
+```
+
+也可以直接使用 Docker Hub 中构建好的镜像
+```Bash
+docker pull 2014cais01/rime-table-decompiler
 ```
 
 ### 运行
@@ -30,13 +35,13 @@ docker build . -t rime_table_decompiler
 反编译二进制词库并标准输出。
 
 ```Bash
-docker run --rm -v /path/to/xxx.table.bin:/data/xxx.table.bin rime_table_decompiler /data/xxx.table.bin
+docker run --rm -v /path/to/xxx.table.bin:/data/xxx.table.bin rime-table-decompiler /data/xxx.table.bin
 ```
 
 反编译二进制词库并输出到纯文本词库文件中。
 
 ```Bash
-docker run --rm -v /path/to/xxx.table.bin:/data/xxx.table.bin rime_table_decompiler /data/xxx.table.bin > xxx.dict.yaml
+docker run --rm -v /path/to/xxx.table.bin:/data/xxx.table.bin rime-table-decompiler /data/xxx.table.bin > xxx.dict.yaml
 ```
 
 **注意将需要反编译的码表 `xxx.table.bin` 挂载进容器。**
